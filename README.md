@@ -3,12 +3,7 @@
 ### npm install
 
 ```
-$npm -i express
-$npm -i dotenv
-$npm -i cookie-parser
-$npm -i mongodb
-$npm -i mongoose
-$npm -i caver-js
+$npm -i
 ```
 
 ### make .env file
