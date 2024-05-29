@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const mongodb = require("mongodb");
@@ -12,12 +13,12 @@ require("dotenv").config();
 const db = process.env.MONGO_URI;
 const app = express();
 //const caver = new Caver(process.env.KLAYTN_NODE_URL);
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 // Connect to MongoDB
-mongoose
-  .connect(db)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+// mongoose
+//   .connect(db)
+//   .then(() => console.log("MongoDB Connected"))
+//   .catch((err) => console.log(err));
 
 app.use("/", indexRouter);
 
