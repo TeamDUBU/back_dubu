@@ -1,0 +1,492 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "contract ProtoDUBU",
+        "name": "_nft",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_workplace",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_code",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_contact",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_date",
+        "type": "string"
+      }
+    ],
+    "name": "addAgent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_hosu",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_agent",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_info",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_option",
+        "type": "string"
+      },
+      {
+        "internalType": "string[]",
+        "name": "_url",
+        "type": "string[]"
+      }
+    ],
+    "name": "addItem",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "agentListArray",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "agent_history",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "hosu",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "code",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "agent",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isReady",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint8",
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "option",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "noteBuyer",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "noteSeller",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "buyer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "seller",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct DUBU.Contracts",
+        "name": "contract_list",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "agent_list",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "workplace",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "code",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "contact",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_hosu",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint48",
+        "name": "_price",
+        "type": "uint48"
+      }
+    ],
+    "name": "buyItem",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAgentsListAll",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getItemsListAll",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "hosu",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DUBU.ItemPair[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_hosu",
+        "type": "uint256"
+      }
+    ],
+    "name": "getUrlList",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "itemCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "itemListArray",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "hosu",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "item_list",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "hosu",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "code",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "agent",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isReady",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint8",
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "option",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "noteBuyer",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "noteSeller",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "buyer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "seller",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct DUBU.Contracts",
+        "name": "contract_list",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_hosu",
+        "type": "uint256"
+      }
+    ],
+    "name": "removePairByIndex",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_hosu",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_note",
+        "type": "string"
+      }
+    ],
+    "name": "setContracts",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

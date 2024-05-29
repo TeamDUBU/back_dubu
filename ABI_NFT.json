@@ -614,6 +614,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getTokensListAll",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -875,13 +888,8 @@
         "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      },
-      {
         "internalType": "string",
-        "name": "_addrToji",
+        "name": "tokenId",
         "type": "string"
       },
       {
@@ -985,11 +993,35 @@
         "internalType": "uint48",
         "name": "_price",
         "type": "uint48"
+      },
+      {
+        "internalType": "address",
+        "name": "_newOwner",
+        "type": "address"
       }
     ],
     "name": "setOwner",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "name": "stringToUint",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -1019,6 +1051,25 @@
         "internalType": "string",
         "name": "",
         "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenListArray",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
