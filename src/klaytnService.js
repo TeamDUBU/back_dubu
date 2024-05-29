@@ -109,6 +109,14 @@ async function useItem_List(tokenID, hosu) {
       return res;
     });
 }
+async function useGetUrlList(tokenID, hosu) {
+  return await DUBUcontract.methods
+    .getUrlList(tokenID, hosu)
+    .call()
+    .then(async (res) => {
+      return res;
+    });
+}
 
 async function useGetItemsListAll() {
   // return await DUBUcontract.methods
@@ -142,4 +150,5 @@ module.exports = {
   useGetAgentsListAll,
   useItem_List,
   useGetItemsListAll,
+  useGetUrlList
 };

@@ -13,6 +13,7 @@ const {
   useGetAgentsListAll,
   useItem_List,
   useGetItemsListAll,
+  useGetUrlList
 } = require("../klaytnService");
 const router = express.Router();
 router.get("/kmap", async (req, res) => {
@@ -30,8 +31,23 @@ router.get("/", async (req, res) => {
   var itemlist = [];
   for (const item of ITEMS) {
     const tmp = await useItem_List(item[0], item[1]);
-    console.log(tmp);
-    itemlist.push(tmp);
+    const tmp2 = await useGetUrlList(item[0], item[1]);
+    const vault = await useGetVault(item[0]);
+    let itemSchema = {
+      tokenId: tmp.tokenId,
+      hosu: tmp.hosu,
+      code: tmp.code,
+      agent: tmp.agent,
+      isReady: tmp.isReady,
+      status: tmp.status,
+      option: tmp.option,
+      index: tmp.index,
+      contract_list: tmp.contract_list,
+      url: tmp2,
+      addrToji: vault["addrToji"],
+      note: vault["note"]
+    }
+    itemlist.push(itemSchema);
   }
   res.send(itemlist);
 });
