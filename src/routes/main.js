@@ -17,15 +17,13 @@ const {
 const router = express.Router();
 router.get("/kmap", async (req, res) => {
   const ITEMS = await useGetItemsListAll();
-  var itemlist = [];
-  //console.log(ITEMS);
+  kmap_res = [];
   for (const item of ITEMS) {
-    const tmp = await useItem_List(item[0], item[1]);
-    console.log(tmp);
-    itemlist.push(tmp);
+    const vault = await useGetVault(item[0]);
+    const info = { addr: vault["addrToji"], note: vault["note"] };
+    kmap_res.push(info);
   }
-  res.send(itemlist);
-  //res.send("hi");
+  res.json(kmap_res);
 });
 router.get("/", async (req, res) => {
   const ITEMS = await useGetItemsListAll();
@@ -36,6 +34,6 @@ router.get("/", async (req, res) => {
     itemlist.push(tmp);
   }
   res.send(itemlist);
-})
+});
 
 module.exports = router;
