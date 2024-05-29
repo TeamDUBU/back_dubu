@@ -11,19 +11,17 @@ const indexRouter = require("./routes/index");
 require("dotenv").config();
 
 // DB Config
-const db = process.env.MONGO_URI;
+// const db = process.env.MONGO_URI;
 const app = express();
-//const caver = new Caver(process.env.KLAYTN_NODE_URL);
-const PORT = process.env.PORT || 3000;
-// Connect to MongoDB
-// mongoose
-//   .connect(db)
-//   .then(() => console.log("MongoDB Connected"))
-//   .catch((err) => console.log(err));
 
 app.use(cors())
 app.use("/", indexRouter);
+//const caver = new Caver(process.env.KLAYTN_NODE_URL);
+const PORT = process.env.PORT || 3000;
+// Connect to MongoDB
+app.listen(3000, () => console.log('listening to port 3000'));
+// mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.MONGODB_QUERY}?retryWrites=true&w=majority`).then(() => {
+//   app.listen(3000, () => console.log('listening to port 3000'));
+// }).catch(err => console.log(err));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
