@@ -30,14 +30,37 @@ router.get("/customerlist/:agents", async (req, res) => {
     const tmp = await useItem_List(item[0], item[1]);
     console.log(me, tmp["agent"]);
     if (me == tmp["agent"]) {
-      const myitem = { tokenId: tmp["tokenId"], status: tmp["status"] };
+      const myitem = {
+        tokenId: tmp["tokenId"],
+        hosu: tmp["hosu"],
+        status: tmp["status"],
+      };
       myItems.push(myitem);
     }
   }
   res.json(myItems);
 });
-//const params = {agents: "0x...", item: "0x..."}
+//const params = {tokenId: "0x...", hosu: "202"}
 //axios.get("localhost:3000/manage", {params})
-router.get("/:agents/:item", async (req, res) => {});
+router.get("/:tokenId/:hosu", async (req, res) => {
+  const tmp = await useItem_List(req.params.tokenId, req.params.hosu);
+  const tmp2 = await useGetUrlList(req.params.tokenId, req.params.hosu);
+  const vault = await useGetVault(req.params.tokenId);
+  let itemSchema = {
+    tokenId: tmp.tokenId,
+    hosu: tmp.hosu,
+    code: tmp.code,
+    agent: tmp.agent,
+    isReady: tmp.isReady,
+    status: tmp.status,
+    option: tmp.option,
+    index: tmp.index,
+    contract_list: tmp.contract_list,
+    url: tmp2,
+    addrToji: vault["addrToji"],
+    note: vault["note"],
+  };
+  itemlist.push(itemSchema);
+});
 
 module.exports = router;
