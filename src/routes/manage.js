@@ -30,7 +30,6 @@ router.get("/customerlist/:agents", async (req, res) => {
     const tmp = await useItem_List(item[0], item[1]);
     console.log(me, tmp["agent"]);
     if (me == tmp["agent"]) {
-      console.log("FIND!!!!!!!!!!!1");
       const myitem = { tokenId: tmp["tokenId"], status: tmp["status"] };
       myItems.push(myitem);
     }
