@@ -27,5 +27,15 @@ router.get("/kmap", async (req, res) => {
   res.send(itemlist);
   //res.send("hi");
 });
+router.get("/", async (req, res) => {
+  const ITEMS = await useGetItemsListAll();
+  var itemlist = [];
+  for (const item of ITEMS) {
+    const tmp = await useItem_List(item[0], item[1]);
+    console.log(tmp);
+    itemlist.push(tmp);
+  }
+  res.send(itemlist);
+})
 
 module.exports = router;

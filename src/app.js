@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 const cron = require("node-cron");
+const cors = require('cors')
 //내부 모듈 호출
 const indexRouter = require("./routes/index");
 require("dotenv").config();
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 3000;
 //   .then(() => console.log("MongoDB Connected"))
 //   .catch((err) => console.log(err));
 
+app.use(cors())
 app.use("/", indexRouter);
 
 app.listen(PORT, () => {
