@@ -36,5 +36,8 @@ router.get("/customerlist/:agents", async (req, res) => {
   }
   res.json(myItems);
 });
+//const params = {agents: "0x...", item: "0x..."}
+//axios.get("localhost:3000/manage", {params})
+router.get("/:agents/:item", async (req, res) => {});
 
 module.exports = router;
