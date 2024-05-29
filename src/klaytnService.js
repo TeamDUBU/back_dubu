@@ -33,6 +33,14 @@ async function useGetApproved(tokenID) {
       return res;
     });
 }
+async function useGetOwner(tokenID, hosu) {
+  return await NFTcontract.methods
+    .getOwner(tokenID, hosu)
+    .call()
+    .then(async (res) => {
+      return res;
+    });
+}
 async function useGetAllHistory(tokenID, hosu) {
   return await NFTcontract.methods
     .getAllHistory(tokenID, hosu)
@@ -44,6 +52,14 @@ async function useGetAllHistory(tokenID, hosu) {
 async function useHosuData(tokenID, hosu) {
   return await NFTcontract.methods
     .hosuData(tokenID, hosu)
+    .call()
+    .then(async (res) => {
+      return res;
+    });
+}
+async function useGetTokenURI(tokenID) {
+  return await NFTcontract.methods
+    .tokenURI(tokenID)
     .call()
     .then(async (res) => {
       return res;
@@ -131,7 +147,7 @@ async function useGetItemsListAll() {
 // test area
 //tokenID : 1159010700110190021
 // async function testFunction() {
-//   const out = await useItem_List("1159010200105000001", "202");
+//   const out = await useGetOwner("1159010200105000001", "101");
 //   console.log(out);
 // }
 
@@ -150,5 +166,6 @@ module.exports = {
   useGetAgentsListAll,
   useItem_List,
   useGetItemsListAll,
-  useGetUrlList
+  useGetUrlList,
+  useGetOwner, useGetTokenURI
 };
