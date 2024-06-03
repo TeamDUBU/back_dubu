@@ -23,9 +23,11 @@ router.get("/kmap", async (req, res) => {
     const vault = await useGetVault(item[0]);
     const hosudata = await useGetHosuData(item[0], item[1]);
     const info = {
+      tokenId: item[0],
       addr: vault["addrToji"],
       note: vault["note"],
       price: hosudata["price"],
+      hosu: item[1],
     };
     kmap_res.push(info);
   }
