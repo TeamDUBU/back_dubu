@@ -26,7 +26,7 @@ router.get("/customerlist/:agents", async (req, res) => {
   //해당 매물에 대해 Item_List를 사용해 agent 조회
   //그게 해당 인물이라면 배열에 담아 리턴
   const ITEMS = await useGetItemsListAll();
-  const me = req.params.agents;
+  const me = req.params.agents.toLowerCase();
   const myItems = [];
   for (const item of ITEMS) {
     const tmp = await useItem_List(item[0], item[1]);
@@ -39,6 +39,7 @@ router.get("/customerlist/:agents", async (req, res) => {
       };
       myItems.push(myitem);
     }
+    console.log(myItems);
   }
   res.json(myItems);
 });

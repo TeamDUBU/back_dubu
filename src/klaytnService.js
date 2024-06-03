@@ -138,6 +138,20 @@ async function useGetUrlList(tokenID, hosu) {
       return res;
     });
 }
+async function useGetURL() {
+  return await NFTcontract.methods
+    .getURL()
+    .call()
+    .then(async (res) => {
+      urls = {
+        realEstate: res[0],
+        toji: res[1],
+        building: res[2],
+        Thumbnail: res[3]
+      }
+      return urls;
+    });
+}
 
 async function useGetItemsListAll() {
   // return await DUBUcontract.methods
@@ -175,4 +189,5 @@ module.exports = {
   useGetOwner,
   useGetTokenURI,
   useAgent_list,
+  useGetURL
 };

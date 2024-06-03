@@ -71,9 +71,46 @@
         "type": "string"
       },
       {
-        "internalType": "string",
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "priceMonth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "priceLent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "manageFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "parking",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "elevator",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "pet",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "fullOpt",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct DUBU.Option",
         "name": "_option",
-        "type": "string"
+        "type": "tuple"
       },
       {
         "internalType": "string[]",
@@ -151,14 +188,51 @@
         "type": "uint8"
       },
       {
-        "internalType": "string",
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "priceMonth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "priceLent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "manageFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "parking",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "elevator",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "pet",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "fullOpt",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct DUBU.Option",
         "name": "option",
-        "type": "string"
+        "type": "tuple"
       },
       {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
+        "internalType": "uint48",
+        "name": "time",
+        "type": "uint48"
       },
       {
         "components": [
@@ -408,14 +482,51 @@
         "type": "uint8"
       },
       {
-        "internalType": "string",
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "priceMonth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "priceLent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "manageFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "parking",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "elevator",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "pet",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "fullOpt",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct DUBU.Option",
         "name": "option",
-        "type": "string"
+        "type": "tuple"
       },
       {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
+        "internalType": "uint48",
+        "name": "time",
+        "type": "uint48"
       },
       {
         "components": [
@@ -461,7 +572,7 @@
         "type": "uint256"
       }
     ],
-    "name": "removePairByIndex",
+    "name": "removePair",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
