@@ -16,7 +16,8 @@ const {
     useGetItemsListAll,
     useGetUrlList,
     useGetOwner,
-    useGetTokenURI
+    useGetTokenURI,
+    useGetURL
 } = require("../klaytnService");
 const router = express.Router();
 router.get("/:address", async (req, res) => {
@@ -26,13 +27,11 @@ router.get("/:address", async (req, res) => {
     let HosuArr;
     let vault;
     let me;
-    let uri;
-    let response;
+    let uri = {};
     for (const item of Token) {
-        uri = await useGetTokenURI(item);
-        response = await axios.get(uri);
         HosuArr = await useGetHosuDataArray(item);
         vault = await useGetVault(item);
+        await useGetURL().then(async (res) => { uri = res });
         for (const hosu of HosuArr) {
             me = await useGetOwner(item, hosu);
             if (me.toLowerCase() == req.params.address.toLowerCase()) {
@@ -45,7 +44,7 @@ router.get("/:address", async (req, res) => {
                 hosu: myNFT,
                 addrToji: vault["addrToji"],
                 note: vault["note"],
-                url: response.data.image
+                url: uri
             });
             myNFT = [];
         }

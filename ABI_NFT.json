@@ -627,6 +627,41 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getURL",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string[]",
+            "name": "realEstate",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string[]",
+            "name": "toji",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string[]",
+            "name": "building",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "Thumbnail",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ProtoDUBU.URL",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
