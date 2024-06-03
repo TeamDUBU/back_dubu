@@ -117,6 +117,11 @@ async function useGetAgentsListAll() {
     });
 }
 
+async function useAgent_list(address) {
+  const res = await DUBUcontract.methods.agent_list(address).call();
+  return res;
+}
+
 async function useItem_List(tokenID, hosu) {
   return await DUBUcontract.methods
     .item_list(tokenID, hosu)
@@ -183,5 +188,6 @@ module.exports = {
   useGetUrlList,
   useGetOwner,
   useGetTokenURI,
+  useAgent_list,
   useGetURL
 };
