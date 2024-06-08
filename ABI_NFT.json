@@ -1033,6 +1033,11 @@
         "internalType": "address",
         "name": "_newOwner",
         "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_note",
+        "type": "string"
       }
     ],
     "name": "setOwner",

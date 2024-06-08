@@ -166,7 +166,7 @@ async function useGetItemsListAll() {
 // test area
 //tokenID : 1159010700110190021
 // async function testFunction() {
-//   const out = await useGetOwner("1159010200105000001", "101");
+//   const out = await useGetHistoryData("1159010200105000001", "102");
 //   console.log(out);
 // }
 

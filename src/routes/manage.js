@@ -13,7 +13,7 @@ const {
   useGetAgentsListAll,
   useItem_List,
   useGetItemsListAll,
-  useAgent_list,
+  useAgent_list, useGetUrlList
 } = require("../klaytnService");
 const router = express.Router();
 
@@ -30,8 +30,8 @@ router.get("/customerlist/:agents", async (req, res) => {
   const myItems = [];
   for (const item of ITEMS) {
     const tmp = await useItem_List(item[0], item[1]);
-    console.log(me, tmp["agent"]);
-    if (me == tmp["agent"].tolowercase()) {
+    // console.log(me, tmp["agent"]);
+    if (me == tmp["agent"].toLowerCase()) {
       const myitem = {
         tokenId: tmp["tokenId"],
         hosu: tmp["hosu"],
@@ -39,7 +39,7 @@ router.get("/customerlist/:agents", async (req, res) => {
       };
       myItems.push(myitem);
     }
-    console.log(myItems);
+    // console.log(myItems);
   }
   res.json(myItems);
 });
@@ -65,6 +65,7 @@ router.get("/:tokenId/:hosu", async (req, res) => {
     note: vault["note"],
   };
   itemlist.push(itemSchema);
+  res.send(itemlist);
 });
 router.get("/", async (req, res) => {
   const Agents_List = await useGetAgentsListAll();
@@ -72,7 +73,7 @@ router.get("/", async (req, res) => {
   var Agent_info;
   for (const agent of Agents_List) {
     const tmp = await useAgent_list(agent);
-    console.log(tmp);
+    // console.log(tmp);
     Agent_info = {
       account: tmp.account,
       name: tmp.name,
