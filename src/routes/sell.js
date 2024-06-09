@@ -21,35 +21,39 @@ const {
 } = require("../klaytnService");
 const router = express.Router();
 router.get("/:address", async (req, res) => {
-    const Token = await useGetTokensListAll();
     var myNFT = [];
     var myNFTs = [];
     let HosuArr;
     let vault;
     let me;
     let uri = {};
-    for (const item of Token) {
-        HosuArr = await useGetHosuDataArray(item);
-        vault = await useGetVault(item);
-        await useGetURL().then(async (res) => { uri = res });
-        for (const hosu of HosuArr) {
-            me = await useGetOwner(item, hosu);
-            if (me.toLowerCase() == req.params.address.toLowerCase()) {
-                myNFT.push(hosu);
+    try {
+        const Token = await useGetTokensListAll();
+        for (const item of Token) {
+            HosuArr = await useGetHosuDataArray(item);
+            vault = await useGetVault(item);
+            await useGetURL().then(async (res) => { uri = res });
+            for (const hosu of HosuArr) {
+                me = await useGetOwner(item, hosu);
+                if (me.toLowerCase() == req.params.address.toLowerCase()) {
+                    myNFT.push(hosu);
+                }
+            }
+            if (myNFT.length > 0) {
+                myNFTs.push({
+                    tokenId: item,
+                    hosu: myNFT,
+                    addrToji: vault["addrToji"],
+                    note: vault["note"],
+                    url: uri
+                });
+                myNFT = [];
             }
         }
-        if (myNFT.length > 0) {
-            myNFTs.push({
-                tokenId: item,
-                hosu: myNFT,
-                addrToji: vault["addrToji"],
-                note: vault["note"],
-                url: uri
-            });
-            myNFT = [];
-        }
+        res.send(myNFTs);
+    } catch (error) {
+        console.log(error);
     }
-    res.send(myNFTs);
 });
 
 module.exports = router;
