@@ -138,6 +138,14 @@ async function useGetUrlList(tokenID, hosu) {
       return res;
     });
 }
+async function useGetAgentHistory(address, index) {
+  return await DUBUcontract.methods
+    .agent_history(address, index)
+    .call()
+    .then(async (res) => {
+      return res;
+    });
+}
 async function useGetURL() {
   return await NFTcontract.methods
     .getURL()
@@ -166,7 +174,7 @@ async function useGetItemsListAll() {
 // test area
 //tokenID : 1159010700110190021
 // async function testFunction() {
-//   const out = await useGetHistoryData("1159010200105000001", "102");
+//   const out = await useGetAgentHistory("0xb7C27FCF11c7D42504EeB39132F97244C032D372", "0");
 //   console.log(out);
 // }
 
@@ -189,5 +197,6 @@ module.exports = {
   useGetOwner,
   useGetTokenURI,
   useAgent_list,
-  useGetURL
+  useGetURL,
+  useGetAgentHistory
 };
